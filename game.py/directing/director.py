@@ -10,7 +10,6 @@ class Director:
         _video_service (VideoService): For providing video output.
     """
 
-#this stays the same - cristian
     def __init__(self, keyboard_service, video_service):
         """Constructs a new Director using the specified keyboard and video services.
         
@@ -23,7 +22,6 @@ class Director:
         self.score = 0
 
 
-#this stays the same - cristian
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
 
@@ -37,8 +35,6 @@ class Director:
             self._do_outputs(cast)
         self._video_service.close_window()
 
-
-#this stays the same - cristian
     def _get_inputs(self, cast):
         """Gets directional input from the keyboard and applies it to the robot.
         
@@ -54,7 +50,6 @@ class Director:
             artifact.set_velocity(art_velocity)
 
 
-#this changes
     def _do_updates(self, cast):
         """Updates the robot's position and resolves any collisions with artifacts.
         
