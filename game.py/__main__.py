@@ -14,15 +14,15 @@ from shared.point import Point
 
 
 FRAME_RATE = 12
-MAX_X = 900
-MAX_Y = 600
-CELL_SIZE = 15
-FONT_SIZE = 15
+MAX_X = 1500
+MAX_Y = 900
+CELL_SIZE = 30
+FONT_SIZE = 30
 COLS = 60
 ROWS = 40
 CAPTION = "Final Project"
 WHITE = Color(255, 255, 255)
-DEFAULT_ARTIFACTS = 40
+DEFAULT_ARTIFACTS = 20
 
 
 def main():
@@ -35,6 +35,12 @@ def main():
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
+
+    banner2 = Actor()
+    banner2.set_text("Go")
+    banner2.set_font_size(FONT_SIZE)
+    banner2.set_position(Point(1200, 0))
+    cast.add_actor("banners", banner2)
     
     x = int(MAX_X / 2)
     y = int(MAX_Y - 30)
@@ -72,7 +78,7 @@ def main():
         cast.add_actor("artifacts", score)
         cast.remove_actor(robot, score)
 
-    # start the game
+    """ Initialize services that game use and start """
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
     director = Director(keyboard_service, video_service)
