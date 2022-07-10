@@ -2,7 +2,11 @@ from casting.actor import Actor
 from scripting.action import Action
 from shared.point import Point
 from directing.director import Director
+from shared.color import Color
 
+MAX_X = 1500
+MAX_Y = 900
+WHITE = Color(255, 255, 255)
 
 class HandleCollisionsAction(Action):
     """
@@ -40,8 +44,8 @@ def _handle_game_over(self, cast):
             segments = snake.get_segments()
             food = cast.get_first_actor("foods")
 
-            x = int(constants.MAX_X / 2)
-            y = int(constants.MAX_Y / 2)
+            x = int(MAX_X / 2)
+            y = int(MAX_Y / 2)
             position = Point(x, y)
 
             message = Actor()
@@ -50,5 +54,5 @@ def _handle_game_over(self, cast):
             cast.add_actor("messages", message)
 
             for segment in segments:
-                segment.set_color(constants.WHITE)
-            food.set_color(constants.WHITE)
+                segment.set_color(WHITE)
+            food.set_color(WHITE)
