@@ -13,7 +13,7 @@ from shared.color import Color
 from shared.point import Point
 
 from scripting.game_over import GameOver
-
+from scripting.script import Script
 
 FRAME_RATE = 12
 MAX_X = 1500
@@ -86,6 +86,9 @@ def main():
     director = Director(keyboard_service, video_service)
     director.start_game(cast)
 
+    """Ends the game"""
+    script = Script()
+    script.add_action("update", GameOver())
 
 if __name__ == "__main__":
     main()
