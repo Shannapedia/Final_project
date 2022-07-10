@@ -8,11 +8,11 @@ MAX_X = 1500
 MAX_Y = 900
 WHITE = Color(255, 255, 255)
 
-class HandleCollisionsAction(Action):
+class GameOver(Action):
     """
     An update action that handles interactions between the actors.
     
-    The responsibility of HandleCollisionsAction is to handle the situation when the snake collides
+    The responsibility of GameOver is to handle the situation when the snake collides
     with the food, or the snake collides with its segments, or the game is over.
 
     Attributes:
@@ -20,7 +20,7 @@ class HandleCollisionsAction(Action):
     """
 
     def __init__(self):
-        """Constructs a new HandleCollisionsAction."""
+        """Constructs a new GameOver."""
         self._is_game_over = False
 
 def execute(self, cast, script):
