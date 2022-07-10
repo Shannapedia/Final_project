@@ -35,6 +35,10 @@ def main():
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
+    
+    x = int(MAX_X / 2)
+    y = int(MAX_Y - 30)
+    position = Point(x, y)
 
     robot = Actor()
     robot.set_text("#")
@@ -42,9 +46,7 @@ def main():
     robot.set_color(WHITE)
     robot.set_position(position)
     cast.add_actor("robots", robot)
-    x = int(MAX_X / 2)
-    y = int(MAX_Y - 30)
-    position = Point(x, y)
+
     
 
     for i in range(DEFAULT_ARTIFACTS):
