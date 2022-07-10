@@ -1,19 +1,16 @@
 import random
-
 from casting.actor import Actor
 from casting.score import Score
 from casting.cast import Cast
-
 from directing.director import Director
-
 from services.keyboard_service import KeyboardService
 from services.video_service import VideoService
-
 from shared.color import Color
 from shared.point import Point
 
 from scripting.game_over import GameOver
 from scripting.script import Script
+
 
 FRAME_RATE = 12
 MAX_X = 1500
@@ -30,14 +27,13 @@ DEFAULT_ITEMS = 20
 def main():
 
     cast = Cast()
-
+    """ Create the banners """
     banner = Actor()
     banner.set_text("")
     banner.set_font_size(FONT_SIZE)
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
-
     banner2 = Actor()
     banner2.set_text("Go")
     banner2.set_font_size(FONT_SIZE)
@@ -48,12 +44,12 @@ def main():
     y = int(MAX_Y - 30)
     position = Point(x, y)
 
-    robot = Actor()
-    robot.set_text("#")
-    robot.set_font_size(FONT_SIZE)
-    robot.set_color(WHITE)
-    robot.set_position(position)
-    cast.add_actor("robots", robot)
+    space_ship = Actor()
+    space_ship.set_text("#")
+    space_ship.set_font_size(FONT_SIZE)
+    space_ship.set_color(WHITE)
+    space_ship.set_position(position)
+    cast.add_actor("space_ships", space_ship)
 
     
 
@@ -78,15 +74,15 @@ def main():
         score.set_position(position)
         score.set_message(1)
         cast.add_actor("items", score)
-        cast.remove_actor(robot, score)
+        cast.remove_actor(space_ship, score)
 
-    """ Initialize services that game use and start """
+    """ Initialize services that game uses and start """
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
     director = Director(keyboard_service, video_service)
     director.start_game(cast)
 
-    """Ends the game"""
+    """Ends the game 'eventualy' """
     script = Script()
     script.add_action("update", GameOver())
 

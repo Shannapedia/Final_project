@@ -36,41 +36,41 @@ class Director:
         self._video_service.close_window()
 
     def _get_inputs(self, cast):
-        """Gets directional input from the keyboard and applies it to the robot.
+        """Gets directional input from the keyboard and applies it to the space_ship.
         
         Args:
             cast (Cast): The cast of actors.
         """
-        robot = cast.get_first_actor("robots")
+        space_ship = cast.get_first_actor("space_ships")
         items = cast.get_actors("items")
         velocity = self._keyboard_service.get_direction()
         art_velocity = self._keyboard_service.move_direction()
-        robot.set_velocity(velocity)
+        space_ship.set_velocity(velocity)
         for item in items: 
             item.set_velocity(art_velocity)
 
 
     def _do_updates(self, cast):
-        """Updates the robot's position and resolves any collisions with items.
+        """Updates the space_ship's position and resolves any collisions with items.
         
         Args:
             cast (Cast): The cast of actors.
         """
         banner = cast.get_first_actor("banners")
         #the guy youre using, only moves right and left-- the gem catcher - cristian
-        robot = cast.get_first_actor("robots")
+        space_ship = cast.get_first_actor("space_ships")
         #these are meant to be moving too
         items = cast.get_actors("items")
 
         # banner.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
-        robot.move_next(max_x, max_y)
+        space_ship.move_next(max_x, max_y)
 
-        #for loop to display the massege of the score when the robot has the same position as the gem or rock.
+        #for loop to display the massege of the score when the space_ship has the same position as the gem or rock.
         for item in items:
             item.move_next(max_x, max_y)
-            if robot.get_position().equals(item.get_position()):
+            if space_ship.get_position().equals(item.get_position()):
                 if item.get_text() == "*":
                     message = item.get_message()
                     self.score += message
