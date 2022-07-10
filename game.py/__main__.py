@@ -12,6 +12,8 @@ from services.video_service import VideoService
 from shared.color import Color
 from shared.point import Point
 
+from scripting.game_over import GameOver
+
 
 FRAME_RATE = 12
 MAX_X = 1500
