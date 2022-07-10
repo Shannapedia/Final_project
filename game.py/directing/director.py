@@ -42,16 +42,16 @@ class Director:
             cast (Cast): The cast of actors.
         """
         robot = cast.get_first_actor("robots")
-        artifacts = cast.get_actors("artifacts")
+        items = cast.get_actors("items")
         velocity = self._keyboard_service.get_direction()
         art_velocity = self._keyboard_service.move_direction()
         robot.set_velocity(velocity)
-        for artifact in artifacts: 
-            artifact.set_velocity(art_velocity)
+        for item in items: 
+            item.set_velocity(art_velocity)
 
 
     def _do_updates(self, cast):
-        """Updates the robot's position and resolves any collisions with artifacts.
+        """Updates the robot's position and resolves any collisions with items.
         
         Args:
             cast (Cast): The cast of actors.
@@ -60,7 +60,7 @@ class Director:
         #the guy youre using, only moves right and left-- the gem catcher - cristian
         robot = cast.get_first_actor("robots")
         #these are meant to be moving too
-        artifacts = cast.get_actors("artifacts")
+        items = cast.get_actors("items")
 
         # banner.set_text("")
         max_x = self._video_service.get_width()
@@ -68,23 +68,24 @@ class Director:
         robot.move_next(max_x, max_y)
 
         #for loop to display the massege of the score when the robot has the same position as the gem or rock.
-        for artifact in artifacts:
-            artifact.move_next(max_x, max_y)
-            if robot.get_position().equals(artifact.get_position()):
-                if artifact.get_text() == "*":
-                    message = artifact.get_message()
+        for item in items:
+            item.move_next(max_x, max_y)
+            if robot.get_position().equals(item.get_position()):
+                if item.get_text() == "*":
+                    message = item.get_message()
                     self.score += message
                     banner.set_text(f"Score: {self.score}")
-                    # added this!!! it removes the artifacts when we touch them
-                    cast.remove_actor("artifacts", artifact) 
-                elif artifact.get_text() == "o":
-                    message = artifact.get_message()
+                    # added this!!! it removes the items when we touch them
+                    cast.remove_actor("items", item) 
+                elif item.get_text() == "o":
+                    message = item.get_message()
                     self.score -= message
                     banner.set_text(f"Score: {self.score}")
-                    cast.remove_actor("artifact", artifact)
+                    cast.remove_actor("item", item)
                     if self.score < 0:
                         self.score = 0
                         banner.set_text(f"Score: {self.score}")
+                        cast.remove_actor("items", item) 
 
     def _do_outputs(self, cast):
         """Draws the actors on the screen.

@@ -22,7 +22,7 @@ COLS = 60
 ROWS = 40
 CAPTION = "Final Project"
 WHITE = Color(255, 255, 255)
-DEFAULT_ARTIFACTS = 20
+DEFAULT_ITEMS = 20
 
 
 def main():
@@ -55,7 +55,7 @@ def main():
 
     
 
-    for i in range(DEFAULT_ARTIFACTS):
+    for i in range(DEFAULT_ITEMS):
         random_symbol=["*","o"]
         text = random.choice(random_symbol)
 
@@ -75,7 +75,7 @@ def main():
         score.set_color(color)
         score.set_position(position)
         score.set_message(1)
-        cast.add_actor("artifacts", score)
+        cast.add_actor("items", score)
         cast.remove_actor(robot, score)
 
     """ Initialize services that game use and start """
