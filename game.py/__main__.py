@@ -35,7 +35,7 @@ def main():
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
     banner2 = Actor()
-    banner2.set_text("Go")
+    banner2.set_text("♡ ♡ ♡")
     banner2.set_font_size(FONT_SIZE)
     banner2.set_position(Point(1200, 0))
     cast.add_actor("banners", banner2)
