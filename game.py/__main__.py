@@ -67,8 +67,9 @@ def main():
     
 
     for i in range(DEFAULT_ITEMS):
-        random_symbol=["*","o"]
-        text = random.choice(random_symbol)
+        # random_symbol=["*","o"]
+        # text = random.choice(random_symbol)
+        gem = "*"
 
         x = random.randint(1, COLS - 1)
         y = random.randint(1, ROWS - 1)
@@ -81,13 +82,37 @@ def main():
         color = Color(r, g, b)
         
         score = Score()
-        score.set_text(text)
+        score.set_text(gem)
         score.set_font_size(FONT_SIZE)
         score.set_color(color)
         score.set_position(position)
         score.set_message(1)
         cast.add_actor("items", score)
         cast.remove_actor(space_ship, score)
+
+    for i in range(DEFAULT_ITEMS):
+        # random_symbol=["*","o"]
+        # text = random.choice(random_symbol)
+        rock = "o"
+
+        x = random.randint(1, COLS - 1)
+        y = random.randint(1, ROWS - 1)
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        
+        score = Score()
+        score.set_text(rock)
+        score.set_font_size(FONT_SIZE)
+        score.set_color(color)
+        score.set_position(position)
+        score.set_message(1)
+        cast.add_actor("items", score)
+        cast.remove_actor(space_ship, score)    
 
     """ Initialize services that game uses and start """
     keyboard_service = KeyboardService(CELL_SIZE)

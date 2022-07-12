@@ -106,7 +106,7 @@ class Director:
                     message = item.get_message()
                     self.score -= message
                     banner.set_text(f"Score: {self.score}")
-                    cast.remove_actor("item", item)
+                    cast.remove_actor("items", item)
                     if self.score < 0:
                         self.score = 0
                         banner.set_text(f"Score: {self.score}")
