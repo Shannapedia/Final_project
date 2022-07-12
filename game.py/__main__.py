@@ -36,11 +36,11 @@ def main():
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
     banner2 = Actor()
-    banner2.set_text("")
+    banner2.set_text("Score: 0")
     banner2.set_font_size(FONT_SIZE)
     banner2.set_color(WHITE)
     banner2.set_position(Point(1200, 0))
-    cast.add_actor("banners", banner2)
+    cast.add_actor("banners2", banner2)
     
     x = int(MAX_X - 300)
     y = int(MAX_Y - 30)
@@ -53,7 +53,7 @@ def main():
     space_ship.set_position(position)
     cast.add_actor("space_ships", space_ship)
 
-    x2 = int(MAX_X - 1100)
+    x2 = int(MAX_X - 1200)
     y2 = int(MAX_Y - 30)
     position2 = Point(x2, y2)
 

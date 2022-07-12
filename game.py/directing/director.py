@@ -79,6 +79,7 @@ class Director:
             cast (Cast): The cast of actors.
         """
         banner = cast.get_first_actor("banners")
+        banner2 = cast.get_first_actor("banners2")
 
         #the guy youre using, only moves right and left-- the gem catcher - cristian
         space_ship = cast.get_first_actor("space_ships")
@@ -99,6 +100,25 @@ class Director:
                 if item.get_text() == "*":
                     message = item.get_message()
                     self.score += message
+                    banner2.set_text(f"Score: {self.score}")
+                    # added this!!! it removes the items when we touch them
+                    cast.remove_actor("items", item) 
+                elif item.get_text() == "o":
+                    message = item.get_message()
+                    self.score -= message
+                    banner2.set_text(f"Score: {self.score}")
+                    cast.remove_actor("items", item)
+                    if self.score < 0:
+                        self.score = 0
+                        banner2.set_text(f"Score: {self.score}")
+                        # cast.remove_actor("items", item) 
+
+        for item in items:
+            # item.move_next(max_x, max_y)
+            if space_ship2.get_position().equals(item.get_position()):
+                if item.get_text() == "*":
+                    message = item.get_message()
+                    self.score += message
                     banner.set_text(f"Score: {self.score}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item) 
@@ -110,7 +130,6 @@ class Director:
                     if self.score < 0:
                         self.score = 0
                         banner.set_text(f"Score: {self.score}")
-                        cast.remove_actor("items", item) 
 
 
     def _do_outputs(self, cast):
