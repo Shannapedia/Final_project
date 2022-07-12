@@ -38,7 +38,7 @@ def main():
     banner2.set_text("♡ ♡ ♡")
     banner2.set_font_size(FONT_SIZE)
     banner2.set_position(Point(1200, 0))
-    cast.add_actor("lives", banner2)
+    cast.add_actor("banners", banner2)
     
     x = int(MAX_X / 2)
     y = int(MAX_Y - 30)

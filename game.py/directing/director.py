@@ -75,10 +75,7 @@ class Director:
             cast (Cast): The cast of actors.
         """
         banner = cast.get_first_actor("banners")
-        banner2 = cast.get_first_actor("lives")
-        lives = Actor()
-        lives.set_text("# # #")
-        cast.add_actor("lives", lives)
+
         #the guy youre using, only moves right and left-- the gem catcher - cristian
         space_ship = cast.get_first_actor("space_ships")
         #these are meant to be moving too
@@ -97,22 +94,18 @@ class Director:
                     message = item.get_message()
                     self.score += message
                     banner.set_text(f"Score: {self.score}")
-                    banner2.set_text(f"Lives: {lives}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item) 
                 elif item.get_text() == "o":
                     message = item.get_message()
                     self.score -= message
-                    cast.remove_actor("lives", lives)
                     banner.set_text(f"Score: {self.score}")
-                    banner2.set_text(f"Lives: {lives}")
                     cast.remove_actor("item", item)
                     if self.score < 0:
                         self.score = 0
                         banner.set_text(f"Score: {self.score}")
                         cast.remove_actor("items", item) 
-                        if banner2 == "":
-                            self._is_game_over = True
+
 
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
