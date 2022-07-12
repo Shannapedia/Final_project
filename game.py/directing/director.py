@@ -24,6 +24,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
+        self._keyboard_service2 = keyboard_service
         self.score = 0
         # for i in range(3):
         #     self.lives = "#"
@@ -60,10 +61,13 @@ class Director:
             cast (Cast): The cast of actors.
         """
         space_ship = cast.get_first_actor("space_ships")
+        space_ship2 = cast.get_first_actor("space_ships2")
         items = cast.get_actors("items")
         velocity = self._keyboard_service.get_direction()
+        velocity2 = self._keyboard_service2.get_direction2()
         art_velocity = self._keyboard_service.move_direction()
-        space_ship.set_velocity(velocity)
+        space_ship.set_velocity(velocity2)
+        space_ship2.set_velocity(velocity)
         for item in items: 
             item.set_velocity(art_velocity)
 
@@ -78,6 +82,7 @@ class Director:
 
         #the guy youre using, only moves right and left-- the gem catcher - cristian
         space_ship = cast.get_first_actor("space_ships")
+        space_ship2 = cast.get_first_actor("space_ships2")
         #these are meant to be moving too
         items = cast.get_actors("items")
 
@@ -85,6 +90,7 @@ class Director:
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         space_ship.move_next(max_x, max_y)
+        space_ship2.move_next(max_x, max_y)
 
         #for loop to display the massege of the score when the space_ship has the same position as the gem or rock.
         for item in items:

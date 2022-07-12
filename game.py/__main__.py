@@ -62,7 +62,7 @@ def main():
     space_ship2.set_font_size(FONT_SIZE)
     space_ship2.set_color(RED)
     space_ship2.set_position(position2)
-    cast.add_actor("space_ships", space_ship2)
+    cast.add_actor("space_ships2", space_ship2)
 
     
 
