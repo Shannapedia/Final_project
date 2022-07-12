@@ -30,7 +30,7 @@ def main():
     cast = Cast()
     """ Create the banners """
     banner = Actor()
-    banner.set_text("")
+    banner.set_text("Score: 0")
     banner.set_font_size(FONT_SIZE)
     banner.set_color(WHITE)
     banner.set_position(Point(CELL_SIZE, 0))
@@ -40,7 +40,7 @@ def main():
     banner2.set_font_size(FONT_SIZE)
     banner2.set_color(WHITE)
     banner2.set_position(Point(1200, 0))
-    cast.add_actor("banners", banner2)
+    cast.add_actor("lives", banner2)
     
     x = int(MAX_X - 300)
     y = int(MAX_Y - 30)
