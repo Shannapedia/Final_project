@@ -21,6 +21,7 @@ COLS = 60
 ROWS = 40
 CAPTION = "Final Project"
 WHITE = Color(255, 255, 255)
+RED = Color(255, 0, 0)
 DEFAULT_ITEMS = 20
 
 
@@ -35,12 +36,13 @@ def main():
     banner.set_position(Point(CELL_SIZE, 0))
     cast.add_actor("banners", banner)
     banner2 = Actor()
-    banner2.set_text("♡ ♡ ♡")
+    banner2.set_text("")
     banner2.set_font_size(FONT_SIZE)
+    banner2.set_color(WHITE)
     banner2.set_position(Point(1200, 0))
     cast.add_actor("banners", banner2)
     
-    x = int(MAX_X / 2)
+    x = int(MAX_X - 300)
     y = int(MAX_Y - 30)
     position = Point(x, y)
 
@@ -50,6 +52,17 @@ def main():
     space_ship.set_color(WHITE)
     space_ship.set_position(position)
     cast.add_actor("space_ships", space_ship)
+
+    x2 = int(MAX_X - 1100)
+    y2 = int(MAX_Y - 30)
+    position2 = Point(x2, y2)
+
+    space_ship2 = Actor()
+    space_ship2.set_text("@")
+    space_ship2.set_font_size(FONT_SIZE)
+    space_ship2.set_color(RED)
+    space_ship2.set_position(position2)
+    cast.add_actor("space_ships", space_ship2)
 
     
 
