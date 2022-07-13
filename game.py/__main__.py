@@ -23,6 +23,8 @@ CAPTION = "Final Project"
 WHITE = Color(255, 255, 255)
 RED = Color(255, 0, 0)
 DEFAULT_ITEMS = 20
+ROCKS = 15
+GEMS = 30
 
 
 def main():
@@ -41,12 +43,12 @@ def main():
     banner2.set_color(WHITE)
     banner2.set_position(Point(1300, 0))
     cast.add_actor("banners2", banner2)
-    banner3 = Actor()
-    banner3.set_text("00:00")
-    banner3.set_font_size(FONT_SIZE)
-    banner3.set_color(WHITE)
-    banner3.set_position(Point(725, 0))
-    cast.add_actor("banners3", banner3)    
+    # banner3 = Actor()
+    # banner3.set_text("00:00")
+    # banner3.set_font_size(FONT_SIZE)
+    # banner3.set_color(WHITE)
+    # banner3.set_position(Point(725, 0))
+    # cast.add_actor("banners3", banner3)    
     
     x = int(MAX_X - 300)
     y = int(MAX_Y - 30)
@@ -72,7 +74,7 @@ def main():
 
     
 
-    for i in range(DEFAULT_ITEMS):
+    for i in range(GEMS):
         # random_symbol=["*","o"]
         # text = random.choice(random_symbol)
         gem = "*"
@@ -96,7 +98,7 @@ def main():
         cast.add_actor("items", score)
         cast.remove_actor(space_ship, score)
 
-    for i in range(DEFAULT_ITEMS):
+    for i in range(ROCKS):
         # random_symbol=["*","o"]
         # text = random.choice(random_symbol)
         rock = "o"

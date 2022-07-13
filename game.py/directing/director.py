@@ -50,19 +50,19 @@ class Director:
         """
         self._video_service.open_window()
         t = 15
-        banner3 = cast.get_first_actor("banners3")    
-        while t:
-            mins, secs = divmod(t, 60)
-            timer = '{:02d}:{:02d}'.format(mins, secs)
-            print(timer, end="\r")
-            banner3.set_text(timer)
-            time.sleep(1)
-            t -= 1 
-            while self._video_service.is_window_open():
-                self._get_inputs(cast)
-                self._do_updates(cast)
-                self._do_outputs(cast)
-            self._video_service.close_window()
+        # banner3 = cast.get_first_actor("banners3")    
+        # while t:
+        #     mins, secs = divmod(t, 60)
+        #     timer = '{:02d}:{:02d}'.format(mins, secs)
+        #     print(timer, end="\r")
+        #     banner3.set_text(timer)
+        #     time.sleep(1)
+        #     t -= 1 
+        while self._video_service.is_window_open():
+            self._get_inputs(cast)
+            self._do_updates(cast)
+            self._do_outputs(cast)
+        self._video_service.close_window()
 
     def _get_inputs(self, cast):
         """Gets directional input from the keyboard and applies it to the space_ship.
