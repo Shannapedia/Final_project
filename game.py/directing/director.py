@@ -110,13 +110,13 @@ class Director:
                 if item.get_text() == "*":
                     message = item.get_message()
                     self.score += message
-                    banner2.set_text(f"Score: {self.score}")
+                    banner2.set_text(f"Player 2: {self.score}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item) 
                 elif item.get_text() == "o":
                     message = item.get_message()
                     self.score -= message
-                    banner2.set_text(f"Score: {self.score}")
+                    banner2.set_text(f"Player 2: {self.score}")
                     cast.remove_actor("items", item)
                     if self.score < 0:
                         self.score = 0
@@ -129,13 +129,13 @@ class Director:
                 if item.get_text() == "*":
                     message = item.get_message()
                     self.score += message
-                    banner.set_text(f"Score: {self.score}")
+                    banner.set_text(f"Player 1: {self.score}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item) 
                 elif item.get_text() == "o":
                     message = item.get_message()
                     self.score -= message
-                    banner.set_text(f"Score: {self.score}")
+                    banner.set_text(f"Player 1: {self.score}")
                     cast.remove_actor("items", item)
                     if self.score < 0:
                         self.score = 0
