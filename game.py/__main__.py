@@ -25,6 +25,11 @@ RED = Color(255, 0, 0)
 DEFAULT_ITEMS = 20
 ROCKS = 15
 GEMS = 30
+ROCKET = ("""v
+    /\\
+    |__|
+    |__|
+  /|/\|\\""")
 
 
 def main():
@@ -51,22 +56,22 @@ def main():
     # cast.add_actor("banners3", banner3)    
     
     x = int(MAX_X - 300)
-    y = int(MAX_Y - 30)
+    y = int(MAX_Y - 300)
     position = Point(x, y)
 
     space_ship = Actor()
-    space_ship.set_text("#")
+    space_ship.set_text(ROCKET)
     space_ship.set_font_size(FONT_SIZE)
     space_ship.set_color(WHITE)
     space_ship.set_position(position)
     cast.add_actor("space_ships", space_ship)
 
     x2 = int(MAX_X - 1200)
-    y2 = int(MAX_Y - 30)
+    y2 = int(MAX_Y - 300)
     position2 = Point(x2, y2)
 
     space_ship2 = Actor()
-    space_ship2.set_text("@")
+    space_ship2.set_text(ROCKET)
     space_ship2.set_font_size(FONT_SIZE)
     space_ship2.set_color(RED)
     space_ship2.set_position(position2)
