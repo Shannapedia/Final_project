@@ -12,8 +12,7 @@ class GameOver(Action):
     """
     An update action that handles interactions between the actors.
     
-    The responsibility of GameOver is to handle the situation when the snake collides
-    with the food, or the snake collides with its segments, or the game is over.
+    The responsibility of GameOver is to handle the game is over situations.
 
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
@@ -34,7 +33,7 @@ class GameOver(Action):
                 self._handle_game_over(cast)
                 
     def _handle_game_over(self, cast):
-            """Shows the 'game over' message and turns the snake and food white if the game is over.
+            """Shows the 'game over' message and turns the ships white if the game is over.
             
             Args:
                 cast (Cast): The cast of Actors in the game.
