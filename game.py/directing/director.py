@@ -4,7 +4,12 @@ from casting.lives import Lives
 from shared.point import Point
 from scripting.game_over import GameOver
 from casting.actor import Actor
+from shared.color import Color
 import time
+
+MAX_X = 1500
+MAX_Y = 900
+WHITE = Color(255, 255, 255)
 
 class Director:
     """A person who directs the game. 
@@ -113,6 +118,23 @@ class Director:
                     banner2.set_text(f"Player 2: {self.score}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item) 
+                    if self.score == 2:
+                        # space_ship = cast.get_first_actor("space_ships")
+                        # items = cast.get_actors("items")
+
+                        x = int(MAX_X / 2)
+                        y = int(MAX_Y / 2)
+                        position = Point(x, y)
+
+                        message = Actor()
+                        message.set_text(f"Game Over! \nPLayer 2 Won! {self.score}")
+                        message.set_position(position)
+                        cast.add_actor("messages", message)
+                        space_ship.set_color(WHITE)
+                        space_ship2.set_color(WHITE)
+
+                        for item in items:
+                            item.set_color(WHITE)
                 elif item.get_text() == "o":
                     message = item.get_message()
                     self.score -= message
@@ -131,7 +153,24 @@ class Director:
                     self.score += message
                     banner.set_text(f"Player 1: {self.score}")
                     # added this!!! it removes the items when we touch them
-                    cast.remove_actor("items", item) 
+                    cast.remove_actor("items", item)
+                    if self.score == 2:
+                        # space_ship = cast.get_first_actor("space_ships")
+                        # items = cast.get_actors("items")
+
+                        x = int(MAX_X / 2)
+                        y = int(MAX_Y / 2)
+                        position = Point(x, y)
+
+                        message = Actor()
+                        message.set_text(f"Game Over! \nPLayer 1 Won! {self.score}")
+                        message.set_position(position)
+                        cast.add_actor("messages", message)
+                        space_ship.set_color(WHITE)
+                        space_ship2.set_color(WHITE)
+
+                        for item in items:
+                            item.set_color(WHITE)                     
                 elif item.get_text() == "o":
                     message = item.get_message()
                     self.score -= message
