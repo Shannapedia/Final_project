@@ -118,7 +118,7 @@ class Director:
                     banner2.set_text(f"Player 2: {self.score}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item) 
-                    if self.score == 2:
+                    if self.score == 10:
                         # space_ship = cast.get_first_actor("space_ships")
                         # items = cast.get_actors("items")
 
@@ -127,7 +127,7 @@ class Director:
                         position = Point(x, y)
 
                         message = Actor()
-                        message.set_text(f"Game Over! \nPLayer 2 Won! {self.score}")
+                        message.set_text(f"Game Over! \nPLayer 2 Won! {self.score} Points!")
                         message.set_position(position)
                         cast.add_actor("messages", message)
                         space_ship.set_color(WHITE)
@@ -154,7 +154,7 @@ class Director:
                     banner.set_text(f"Player 1: {self.score}")
                     # added this!!! it removes the items when we touch them
                     cast.remove_actor("items", item)
-                    if self.score == 2:
+                    if self.score == 10:
                         # space_ship = cast.get_first_actor("space_ships")
                         # items = cast.get_actors("items")
 
@@ -163,7 +163,7 @@ class Director:
                         position = Point(x, y)
 
                         message = Actor()
-                        message.set_text(f"Game Over! \nPLayer 1 Won! {self.score}")
+                        message.set_text(f"Game Over! \nPLayer 1 Won! {self.score} Points!")
                         message.set_position(position)
                         cast.add_actor("messages", message)
                         space_ship.set_color(WHITE)
