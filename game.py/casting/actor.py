@@ -39,21 +39,21 @@ class Actor:
         self._position = Point(x, y)
 
     def set_color(self, color):
-        """Updates the color to the given one. """
+        """ Updates the color to the given one. """
         self._color = color
 
     def set_position(self, position):
-        """Updates the position to the given one. """
+        """ Updates the position to the given one. """
         self._position = position
     
     def set_font_size(self, font_size):
-        """Updates the font size to the given one. """
+        """ Updates the font size to the given one. """
         self._font_size = font_size
     
     def set_text(self, text):
-        """Updates the text to the given value. """
+        """ Updates the text to the given value. """
         self._text = text
 
     def set_velocity(self, velocity):
-        """Updates the velocity to the given one. """
+        """ Updates the velocity to the given one. """
         self._velocity = velocity
