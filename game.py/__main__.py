@@ -8,10 +8,6 @@ from services.video_service import VideoService
 from shared.color import Color
 from shared.point import Point
 
-from scripting.game_over import GameOver
-from scripting.script import Script
-
-
 FRAME_RATE = 12
 MAX_X = 1500
 MAX_Y = 900
@@ -35,6 +31,7 @@ ROCKET = ("""v
 def main():
 
     cast = Cast()
+
     """ Create the banners """
     banner = Actor()
     banner.set_text("Player 1: 0")
@@ -48,12 +45,6 @@ def main():
     banner2.set_color(WHITE)
     banner2.set_position(Point(1300, 0))
     cast.add_actor("banners2", banner2)
-    # banner3 = Actor()
-    # banner3.set_text("00:00")
-    # banner3.set_font_size(FONT_SIZE)
-    # banner3.set_color(WHITE)
-    # banner3.set_position(Point(725, 0))
-    # cast.add_actor("banners3", banner3)    
     
     x = int(MAX_X - 300)
     y = int(MAX_Y - 300)
@@ -77,13 +68,8 @@ def main():
     space_ship2.set_position(position2)
     cast.add_actor("space_ships2", space_ship2)
 
-    
-
     for i in range(GEMS):
-        # random_symbol=["*","o"]
-        # text = random.choice(random_symbol)
         gem = "*"
-
         x = random.randint(1, COLS - 1)
         y = random.randint(1, ROWS - 1)
         position = Point(x, y)
@@ -104,10 +90,7 @@ def main():
         cast.remove_actor(space_ship, score)
 
     for i in range(ROCKS):
-        # random_symbol=["*","o"]
-        # text = random.choice(random_symbol)
         rock = "o"
-
         x = random.randint(1, COLS - 1)
         y = random.randint(1, ROWS - 1)
         position = Point(x, y)
@@ -132,10 +115,6 @@ def main():
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
     director = Director(keyboard_service, video_service)
     director.start_game(cast)
-
-    """Ends the game 'eventualy' """
-    script = Script()
-    script.add_action("update", GameOver())
 
 if __name__ == "__main__":
     main()
