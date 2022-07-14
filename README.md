@@ -37,6 +37,6 @@ root                    (project root folder)
 
 ## Authors
 ---
-* Kelley Robertson (Managed to properly set up the game over screen)
+* Kelley Robertson (Managed to properly set up the game over screen, added the keys for both players on the keyboard to move, and created the scores for both players)
 * Shanny López (Creator of repository, set up the "skeleton" of the project)
 * Cristian Avendaño (Set up the ships, cleaned up code at different parts)
