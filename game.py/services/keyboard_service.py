@@ -1,31 +1,15 @@
 import pyray
 from shared.point import Point
 
-
 class KeyboardService:
-    """Detects player input. 
-    
-    The responsibility of a KeyboardService is to detect player key presses and translate them into 
-    a point representing a direction.
-
-    Attributes:
-        cell_size (int): For scaling directional input to a grid.
-    """
+    """ Detects player input. """
 
     def __init__(self, cell_size = 1):
-        """Constructs a new KeyboardService using the specified cell size.
-        
-        Args:
-            cell_size (int): The size of a cell in the display grid.
-        """
+        """ Constructs a new KeyboardService using the specified cell size. """
         self._cell_size = cell_size
 
     def get_direction(self):
-        """Gets the selected direction based on the currently pressed keys.
-
-        Returns:
-            Point: The selected direction.
-        """
+        """ Gets the selected direction based on the currently pressed keys for the first player. """
         dx = 0
         dy = 0
 
@@ -47,11 +31,7 @@ class KeyboardService:
         return direction
 
     def get_direction2(self):
-        """Gets the selected direction based on the currently pressed keys.
-
-        Returns:
-            Point: The selected direction.
-        """
+        """ Gets the selected direction based on the currently pressed keys for the second player. """
         dx = 0
         dy = 0
 
@@ -73,11 +53,7 @@ class KeyboardService:
         return direction    
 
     def move_direction(self):
-        """Gets the selected direction based on the currently pressed keys.
-
-        Returns:
-            Point: The selected direction.
-        """
+        """ Gets the selected direction based on the currently pressed keys. """
         dx = 0
         dy = 0
 
