@@ -26,7 +26,6 @@ root                    (project root folder)
 +-- space_catch               (source code for game)
   +-- game              (specific game classes)
   +-- __main__.py       (entry point for program)
-  +-- constants.py      (general values that are referenced through the classes)
 +-- README.md           (general info)
 ```
 
@@ -38,5 +37,5 @@ root                    (project root folder)
 ## Authors
 ---
 * Kelley Robertson (Managed to properly set up the game over screen, added the keys for both players on the keyboard to move, and created the scores for both players)
-* Shanny López (Creator of repository, set up the "skeleton" of the project)
+* Shanny López (Creator of repository, set up the "skeleton" of the project and clean the unused code)
 * Cristian Avendaño (Set up the ships, cleaned up code at different parts)
