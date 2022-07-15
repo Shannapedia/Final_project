@@ -1,5 +1,7 @@
 import random
 from casting.actor import Actor
+from casting.ships import Ships
+
 from casting.score import Score
 from casting.cast import Cast
 from directing.director import Director
@@ -50,9 +52,9 @@ def main():
     y = int(MAX_Y - 300)
     position = Point(x, y)
 
-    space_ship = Actor()
+    space_ship = Ships()
     space_ship.set_text(ROCKET)
-    space_ship.set_font_size(FONT_SIZE)
+    space_ship.set_font_size()
     space_ship.set_color(WHITE)
     space_ship.set_position(position)
     cast.add_actor("space_ships", space_ship)
@@ -61,9 +63,9 @@ def main():
     y2 = int(MAX_Y - 300)
     position2 = Point(x2, y2)
 
-    space_ship2 = Actor()
+    space_ship2 = Ships()
     space_ship2.set_text(ROCKET)
-    space_ship2.set_font_size(FONT_SIZE)
+    space_ship2.set_font_size()
     space_ship2.set_color(RED)
     space_ship2.set_position(position2)
     cast.add_actor("space_ships2", space_ship2)
