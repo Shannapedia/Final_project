@@ -23,11 +23,6 @@ RED = Color(255, 0, 0)
 DEFAULT_ITEMS = 20
 ROCKS = 15
 GEMS = 30
-ROCKET = ("""v
-    /\\
-    |__|
-    |__|
-  /|/\|\\""")
 
 
 def main():
@@ -53,7 +48,7 @@ def main():
     position = Point(x, y)
 
     space_ship = Ships()
-    space_ship.set_text(ROCKET)
+    space_ship.set_text()
     space_ship.set_font_size()
     space_ship.set_color(WHITE)
     space_ship.set_position(position)
@@ -64,7 +59,7 @@ def main():
     position2 = Point(x2, y2)
 
     space_ship2 = Ships()
-    space_ship2.set_text(ROCKET)
+    space_ship2.set_text()
     space_ship2.set_font_size()
     space_ship2.set_color(RED)
     space_ship2.set_position(position2)
