@@ -7,6 +7,7 @@ class Ships(Actor):
     def __init__(self):
         super().__init__()
         self.set_font_size()
+        self.set_text()
 
     def set_font_size(self):
         """ Updates the size of the ships to a fixed value, independant of anything else on the program. """
